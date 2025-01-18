@@ -27,7 +27,7 @@ pub fn build(b: *std.build.Builder) void {
     const iso = b.addSystemExecutable("iso", "grub-mkrescue");
     iso.addSystemCmdArg("-o");
     iso.addSystemCmdArg("bin/kzylo.iso");
-    iso.addSystemCmdArg("boot/");
+    iso.addSystemCmdArg("iso/");
     iso.step.dependOn(&kernel.step);
 
     const run_qemu = b.step("run", "Run kernel in QEMU");
