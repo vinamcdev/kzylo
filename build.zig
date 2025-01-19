@@ -31,15 +31,6 @@ const kernel_config = .{
 pub fn build(b: *std.Build) void {
     const feature_mod = getFeatureMod(kernel_config.arch);
 
-    const args = b.args;
-
-    if (args) |argv| {
-        for (argv) |arg| {
-            std.debug.print("{s} ", .{arg});
-        }
-        std.debug.print("\n", .{});
-    }
-
     const target_query: std.Target.Query = .{
         .cpu_arch = kernel_config.arch,
         .os_tag = .uefi,
