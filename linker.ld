@@ -1,4 +1,3 @@
-OUTPUT_FORMAT("elf64-x86_64")
 ENTRY(start)
 
 SECTIONS
