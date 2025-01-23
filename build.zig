@@ -53,7 +53,5 @@ pub fn build(b: *std.Build) void {
     kernel.setLinkerScript(.{ .cwd_relative = "linker.ld" });
     _ = b.installArtifact(kernel);
 
-    b.default_step.dependOn(&kernel.step);
-
     std.debug.print("[{s}OK{s}] Kernel build finished\n", .{ "\x1b[32;40m", "\x1b[39;49m" });
 }
